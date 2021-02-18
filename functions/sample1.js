@@ -5,13 +5,13 @@
 
 // Good luck!
 
-function singles(arr){
+function singles(arr) {
     if (arr === undefined) throw new Error("array is required");
     // Your code here!
     const myArray = [];
     let myNumber = 0;
-    for (const number of arr){
-        if(myArray.includes(number) === true){
+    for (const number of arr) {
+        if (myArray.includes(number) === true) {
             myNumber = myNumber - number;
         } else {
             myNumber = myNumber + number;
@@ -24,6 +24,10 @@ function singles(arr){
     return myNumber;
 }
 
+function sum(a, b) {
+    return a + b;
+}
+
 module.exports = {
-    singles
+    singles, sum
 };
