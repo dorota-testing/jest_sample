@@ -17,6 +17,7 @@ describe('splitArrToUnique', () => {
     });   
 });
 
+// this tests the basket
 describe('basketPrice', () => {
     test('empty basket returns 0', () => {
         expect(basketPrice([])).toBe(0);
