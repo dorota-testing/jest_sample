@@ -21,7 +21,9 @@ For example, how much does this basket of books cost?
 1 copy of the fourth book
 1 copy of the fifth book
 
-Answer: 51.20 EUR
+[h1, h1, h2, h2, h3, h3, h4, h5] = [h1, h2, h3, h4, h5] + [h1 h2 h3] = 30 + 21.60 = 51.60 EUR
+
+Answer: 51.20 EUR // DOROTA'S NOTE - this was provided, but is not true, in fact answer is 51.60
 */
 
 function basketPrice(arrBooks) {
@@ -30,14 +32,21 @@ function basketPrice(arrBooks) {
     if (arrBooks.length === 1) {
         price = 8;
     } else if (arrBooks.length > 1) {
-
+        let arrSequences = splitArrToUnique(arrBooks);
+        // array with discount values, index of array equals amount of books
+        let arrDiscount = [0, 0, 0.05, 0.1, 0.2, 0.25];
+        for (const sequence of arrSequences) {
+            sequencePrice = (sequence.length * 8) - ((sequence.length * 8) * arrDiscount[sequence.length]);
+            // console.log("price=", (sequence.length * 8), "percentage=", arrDiscount[sequence.length]);
+            price = price + sequencePrice;
+        }
     }
     return price;
 }
 
 /**
  * This splits an array into sequences of unique values.
- * Returns an array of arrays, inner arrays contain unique vaues
+ * Returns an array of arrays, inner arrays contain unique values
  * @param {array} arr - array to be split 
  */
 function splitArrToUnique(arr) {
