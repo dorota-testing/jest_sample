@@ -35,9 +35,10 @@ function basketPrice(arrBooks) {
         let arrSequences = splitArrToUnique(arrBooks);
         // array with discount values, index of array equals amount of books
         let arrDiscount = [0, 0, 0.05, 0.1, 0.2, 0.25];
+        let discount = 0;
         for (const sequence of arrSequences) {
-            sequencePrice = (sequence.length * 8) - ((sequence.length * 8) * arrDiscount[sequence.length]);
-            // console.log("price=", (sequence.length * 8), "percentage=", arrDiscount[sequence.length]);
+            if(arrSequences.length < 6){ discount = arrDiscount[sequence.length]; }
+            let sequencePrice = (sequence.length * 8) - ((sequence.length * 8) * discount);
             price = price + sequencePrice;
         }
     }
