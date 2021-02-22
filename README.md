@@ -20,9 +20,11 @@ Once you've got Node installed you can make a start.
 
 ### Working with this code
 
-Firstly you will need to [fork this GitHub repository](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) to your own GitHub profile and then clone your forked repository down to your laptop.
+You need to download this repo to your own machine manually (download zip) or by forking it to your GitHub and cloning from there.
 
-Once you have cloned your repository you can proceed to install the dependencies by navigating into the directory (you have cloned) and running:
+See how to [fork this GitHub repository](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
+
+Once you have downloaded or cloned your repository you can proceed to install the dependencies by navigating into the directory (you have cloned) and running:
 
     yarn install
 
@@ -34,4 +36,8 @@ To run the tests, run
 
     yarn test
 
-You can add your own functions and test.    
+You can add your own functions and test.  
+
+To test specific file run 
+
+    yarn test filename.test.js
